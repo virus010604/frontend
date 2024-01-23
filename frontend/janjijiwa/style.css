@@ -80,6 +80,41 @@ body {
 #hamburger {
   display: none;
 }
+
+/* navbar search form */
+.navbar .searchform {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: aliceblue;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+.navbar .searchform.active {
+  transform: scaleY(1);
+}
+
+.navbar .searchform input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #010101;
+  padding: 1rem;
+}
+.navbar .searchform label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: var(--primary);
+}
+
+/* navbar search form end */
+
 /*herosection*/
 .hero {
   min-height: 100vh;
@@ -110,7 +145,7 @@ body {
   padding: 1.4rem 15%;
   max-width: 60rem;
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4.2px);
+  backdrop-filter: blur(5.5px);
   border-radius: 5px;
 }
 .hero .content h2 {
@@ -220,6 +255,12 @@ body {
   border-radius: 20px;
   width: 200px;
   height: 300px;
+  transition: 0.2s;
+}
+.menu-img:hover {
+  width: 210px;
+  height: 310px;
+  box-shadow: #be954f45 1px 1px 10px 10px;
 }
 .menu-title {
   margin-top: 1.5rem auto 1.5rem;
@@ -287,6 +328,13 @@ body {
   display: inline-block;
   padding: 0.5rem 0.5rem;
   cursor: pointer;
+  transition: 0.2s;
+}
+.contack .row form .btn svg {
+  margin-right: 10px;
+}
+.contack .row form .btn button:hover {
+  color: #010101;
 }
 /*contackEND*/
 
@@ -482,7 +530,7 @@ footer h4 {
     font-size: 1.7rem;
   }
   .contack .row form .btn button {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .contack p {
     font-size: 1.2rem;
