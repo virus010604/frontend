@@ -1,277 +1,353 @@
 <!DOCTYPE html>
-<html style="scroll-behavior: smooth;">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kopi Janjiwa</title>
+<html>
 
-    <script src="https://unpkg.com/feather-icons"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kopi Janjiwa</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon"
+    href="data:image/png;base64,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">
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body style="scroll-behavior: smooth;">
-    <!----navbar-->
-    <nav class="navbar">
-      <a href="#" class="navbar-logo">Janji<span>Jiwa</span></a>
+<body>
+  <!----navbar-->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">Janji<span>Jiwa</span></a>
 
-      <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About us</a>
-        <a href="#menu">Menu</a>
-        <a href="#contack">Contack</a>
-      </div>
-
-      <div class="navbar-extra">
-        <a href="#" id="searcha"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-search"
-          >
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg
-        ></a>
-        <a href="#" id="shopping-cart"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-shopping-cart"
-          >
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path
-              d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-            ></path></svg
-        ></a>
-        <a href="#0" id="hamburger"
-          ><svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-menu"
-          >
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line></svg
-        ></a>
-      </div>
-
-      <!-- search -->
-      <div class="searchform">
-        <input type="search" id="searchbox" placeholder="search here">
-        <label for="searchbox"><i><svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-search"
-        >
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></i></label>
-      </div>
-      <!-- searchend -->
-
-    </nav>
-    <!----navbarend-->
-
-    <!----hero secetion-->
-    <section class="hero" id="home">
-      <main class="content">
-        <h2>Janji <span>Enak!</span></h2>
-        <p>
-          <pre>Kopi Dari Hati 
-Untuk Teman Sejiwa.</pre>
-        </p>
-        <a href="#menu" class="cta">Bungkus!</a>
-      </main>
-    </section>
-    <!----hero secetion end-->
-
-    <!--section abous us-->
-    <section id="about" class="about">
-      <h2>About <span>Us</span></h2>
-
-      <div class="row">
-        <div class="aboutimg">
-          <img
-            src="https://cdn.medcom.id/dynamic/content/2022/11/10/1500580/xKGbcMFI1d.jpg?w=480"
-            alt="about us"
-          />
-        </div>
-        <div class="content">
-          <h3>Kenapa Janji <span>jiwa?</span></h3>
-          <p>
-            Bring Flavour to Everyday Life Through the Creative Explorations of
-            Food and Drink
-            <i
-              ><cite
-                >"DO IT FOR THE EXCITEMENT, DO IT FOR THE LOVE, DO IT FOR THE
-                PEOPLE"</cite
-              ></i
-            >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem
-            aspernatur itaque dicta cupiditate nemo.
-            accusamus. Fuga reiciendis id adipisci. Minima nobis et similique
-            vel placeat? sed vitae molestias nostrum! Beatae.
-          </p>
-          <p>
-            Janji kami untuk melihat sekeliling kami untuk memberikan dampak
-            yang lebih besar bagi bumi dan bagi sesama.
-          </p>
-        </div>
-      </div>
-    </section>
-    <!--section abous us end-->
-
-    <!--section menu-->
-    <section id="menu" class="menu">
-      <h2>Menu <span>Jiwa</span></h2>
-      <div class="row">
-        <div class="menu-card">
-          <img class="menu-img" src="img/menu1.png" alt="kopi">
-          <h3 class="menu-title">- Soya Coffe Latte -</h3>
-          <p class="menu-price">25k</p>
-        </div>
-        <div class="menu-card">
-          <img class="menu-img" src="img/menu2.png" alt="kopi">
-          <h3 class="menu-title">- EsKopi Susu -</h3>
-          <p class="menu-price">25k</p>
-        </div>
-        <div class="menu-card">
-          <img class="menu-img" src="img/menu3.png" alt="kopi">
-          <h3 class="menu-title">- EsKopi Pokat -</h3>
-          <p class="menu-price">25k</p>
-        </div>
-        <div class="menu-card">
-          <img class="menu-img" src="img/menu4.png" alt="kopi">
-          <h3 class="menu-title">- EScoco Presso -</h3>
-          <p class="menu-price">25k</p>
-        </div>
-        <div class="menu-card">
-          <img class="menu-img" src="img/menu5.png" alt="kopi">
-          <h3 class="menu-title">- Eskopi Soklat -</h3>
-          <p class="menu-price">25k</p>
-        </div>
-        <div class="menu-card">
-          <img class="menu-img" src="img/menu6.png" alt="kopi">
-          <h3 class="menu-title">- Ice Latte -</h3>
-          <p class="menu-price">25k</p>
-        </div>
-      </div>
-    </section>
-    <!--section menu end-->
-
-    <!--section contack-->
-<section id="contack" class="contack">
-<h2>Contack <span>Jiwa</span></h2>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing
-   elit. Enim quia illum, quasi at quo delectus.</p>
-   <div class="row">
-    <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7978.531734166414!2d122.7903815279456!3d-0.9534849706132329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d86a3792fb364b9%3A0xa59db9b43daf9488!2sKopi%20janji%20jiwa!5e0!3m2!1sen!2sid!4v1703913642972!5m2!1sen!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    <form action="">
-      <div class="input-group">
-        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></i>
-        <input type="text" placeholder="name">
-      </div>
-      <div class="input-group">
-        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></i>
-        <input type="email" placeholder="email">
-      </div>
-      <div class="input-group">
-        <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></i>
-        <input type="text" placeholder="number">
-      </div>
-      <div class="btn">
-      <button><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></i>Send</button>
-      <div>
-    </form>
-   </div>
-
-</section>
-    <!--section contack end-->
-
-    <!--btnscroll-->
-    <div class="btnscrl">
-      <button>
-        <a href="#home">
-        <i><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="16 12 12 8 8 12"></polyline><line x1="12" y1="16" x2="12" y2="8"></line></svg></i>
-      </a>
-      </button>
+    <div class="navbar-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About us</a>
+      <a href="#menu">Menu</a>
+      <a href="#Products">Product</a>
+      <a href="#contack">Contack</a>
     </div>
-    <!--btnscrollend-->
-    
-    <!--section footer-->
-<footer>
+
+    <div class="navbar-extra">
+      <a href="#" id="searcha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-search">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg></a>
+      <a href="#" id="shopping-cart"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-shopping-cart">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg></a>
+      <a href="#0" id="hamburger"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="feather feather-menu">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg></a>
+    </div>
+
+    <!-- search -->
+    <div class="searchform">
+      <input type="search" id="searchbox" placeholder="search here">
+      <label for="searchbox"><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-search">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg></i></label>
+    </div>
+    <!-- searchend -->
+    <!-- shopcart -->
+    <div class="shopcart" id="shopc">
+      <div class="cartitem">
+        <img src="/img/pic3.jpg" alt="biji">
+        <div class="cartdet">
+          <h3>Biji Jiwa 1</h3>
+          <div class="itemprice">idr 50K</div>
+        </div>
+
+        <i data-feather="trash" class="removeitm" id="hapus"></i>
+
+      </div>
+    </div>
+    <!-- shopcart end -->
+
+  </nav>
+  <!----navbarend-->
+
+  <!----hero secetion-->
+  <section class="hero" id="home">
+    <main class="content">
+      <h2>Janji <span>Enak!</span></h2>
+      <p>
+      <pre>Kopi Dari Hati 
+Untuk Teman Sejiwa.</pre>
+      </p>
+      <a href="#Products" class="cta">Bungkus!</a>
+    </main>
+  </section>
+  <!----hero secetion end-->
+
+  <!--section abous us-->
+  <section id="about" class="about">
+    <h2>About <span>Us</span></h2>
+
+    <div class="row">
+      <div class="aboutimg">
+        <img src="https://cdn.medcom.id/dynamic/content/2022/11/10/1500580/xKGbcMFI1d.jpg?w=480" alt="about us" />
+      </div>
+      <div class="content">
+        <h3>Kenapa Janji <span>jiwa?</span></h3>
+        <p>
+          Bring Flavour to Everyday Life Through the Creative Explorations of
+          Food and Drink
+          <i><cite>"DO IT FOR THE EXCITEMENT, DO IT FOR THE LOVE, DO IT FOR THE
+              PEOPLE"</cite></i>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem
+          aspernatur itaque dicta cupiditate nemo.
+          accusamus. Fuga reiciendis id adipisci. Minima nobis et similique
+          vel placeat? sed vitae molestias nostrum! Beatae.
+        </p>
+        <p>
+          Janji kami untuk melihat sekeliling kami untuk memberikan dampak
+          yang lebih besar bagi bumi dan bagi sesama.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!--section abous us end-->
+
+  <!--section menu-->
+  <section id="menu" class="menu">
+    <h2>Menu <span>Jiwa</span></h2>
+    <div class="row">
+      <div class="menu-card">
+        <img class="menu-img" src="img/menu1.png" alt="kopi">
+        <h3 class="menu-title">- Soya Coffe Latte -</h3>
+        <p class="menu-price">25k</p>
+      </div>
+      <div class="menu-card">
+        <img class="menu-img" src="img/menu2.png" alt="kopi">
+        <h3 class="menu-title">- EsKopi Susu -</h3>
+        <p class="menu-price">25k</p>
+      </div>
+      <div class="menu-card">
+        <img class="menu-img" src="img/menu3.png" alt="kopi">
+        <h3 class="menu-title">- EsKopi Pokat -</h3>
+        <p class="menu-price">25k</p>
+      </div>
+      <div class="menu-card">
+        <img class="menu-img" src="img/menu4.png" alt="kopi">
+        <h3 class="menu-title">- EScoco Presso -</h3>
+        <p class="menu-price">25k</p>
+      </div>
+      <div class="menu-card">
+        <img class="menu-img" src="img/menu5.png" alt="kopi">
+        <h3 class="menu-title">- Eskopi Soklat -</h3>
+        <p class="menu-price">25k</p>
+      </div>
+      <div class="menu-card">
+        <img class="menu-img" src="img/menu6.png" alt="kopi">
+        <h3 class="menu-title">- Ice Latte -</h3>
+        <p class="menu-price">25k</p>
+      </div>
+    </div>
+  </section>
+  <!--section menu end-->
+
+  <!--biji kopi-->
+  <section id="Products" class="menub">
+    <h2>Biji <span>Jiwa</span></h2>
+    <p>Di panen dari pegunungan Indonesia 100% Biji berkulitas
+      asli Indonesia buatan anak bangsa siap anda nikmati.
+    </p>
+    <div class="row">
+      <div class="productcard">
+        <div class="producticon">
+          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="#"><i data-feather="eye"></i></a>
+        </div>
+        <div class="productimg">
+          <img src="/img/pic3.jpg" alt="gambar">
+        </div>
+        <div class="productcontent">
+          <h3>-Biji Jiwa 45-</h3>
+          <div class="productstars">
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star"></i>
+          </div>
+          <div class="productprice">
+            IDR 50K <span>IDR 75k</span>
+          </div>
+        </div>
+      </div>
+      <div class="productcard">
+        <div class="producticon">
+          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="#"><i data-feather="eye"></i></a>
+        </div>
+        <div class="productimg">
+          <img src="/img/pic3.jpg" alt="gambar">
+        </div>
+        <div class="productcontent">
+          <h3>-Biji Jiwa 45-</h3>
+          <div class="productstars">
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star"></i>
+            <i data-feather="star"></i>
+          </div>
+          <div class="productprice">
+            IDR 50K <span>IDR 75k</span>
+          </div>
+        </div>
+      </div>
+      <div class="productcard">
+        <div class="producticon">
+          <a href="#"><i data-feather="shopping-cart"></i></a>
+          <a href="#"><i data-feather="eye"></i></a>
+        </div>
+        <div class="productimg">
+          <img src="/img/pic3.jpg" alt="gambar">
+        </div>
+        <div class="productcontent">
+          <h3>-Biji Jiwa 45-</h3>
+          <div class="productstars">
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+            <i data-feather="star" class="fills"></i>
+          </div>
+          <div class="productprice">
+            IDR 50K <span>IDR 75k</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--biji kopi end-->
+
+  <!--section contack-->
+  <section id="contack" class="contack">
+    <h2>Contack <span>Jiwa</span></h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing
+      elit. Enim quia illum, quasi at quo delectus.</p>
+    <div class="row">
+      <iframe class="maps"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7978.531734166414!2d122.7903815279456!3d-0.9534849706132329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d86a3792fb364b9%3A0xa59db9b43daf9488!2sKopi%20janji%20jiwa!5e0!3m2!1sen!2sid!4v1703913642972!5m2!1sen!2sid"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <form action="">
+        <div class="input-group">
+          <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-user">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg></i>
+          <input type="text" placeholder="name">
+        </div>
+        <div class="input-group">
+          <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-mail">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg></i>
+          <input type="email" placeholder="email">
+        </div>
+        <div class="input-group">
+          <i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="feather feather-phone">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg></i>
+          <input type="text" placeholder="number">
+        </div>
+        <div class="btn">
+          <button><i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-send">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg></i>Send</button>
+          <div>
+      </form>
+    </div>
+
+  </section>
+  <!--section contack end-->
+
+  <!--btnscroll-->
+  <div class="btnscrl">
+    <button>
+      <a href="#home">
+        <i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-circle">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="16 12 12 8 8 12"></polyline>
+            <line x1="12" y1="16" x2="12" y2="8"></line>
+          </svg></i>
+      </a>
+    </button>
+  </div>
+  <!--btnscrollend-->
+
+  <!--section footer-->
+  <footer>
     <div class="social">
-    <h4>Media Sosial</h4>
-    <a href="https://www.instagram.com/kopijanjijiwa.lwklalong/">
+      <h4>Media Sosial</h4>
+      <a href="https://www.instagram.com/kopijanjijiwa.lwklalong/">
+        <img src="/img/ig.png" alt="ig">
+      </a>
+    </div>
+
+    <div class="links">
+      <h4>Menu</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About us</a>
+      <a href="#menu">Menu</a>
+      <a href="#contack">Contack</a>
+    </div>
+
+    <div class="addres">
+      <h4>Addres</h4>
+      <a href="https://maps.app.goo.gl/p8TcjJ1Y14rL8GcFA">
+        <p>Jl. MT Haryono, Luwuk, Kabupaten Banggai, Sulawesi Tengah</p>
+      </a>
+    </div>
+
+
+  </footer>
+  <div class="hak">
+    <h4>created by virus010604. | <span>&#169; 2023 </span></h4>
+    <a href="https://www.instagram.com/jnpblokg_/">
       <img src="/img/ig.png" alt="ig">
     </a>
+    <a href="https://www.linkedin.com/in/juan-kuganda-b56714299/">
+      <img class="li" src="/img/likedln.png" alt="ig">
+    </a>
   </div>
+  <!--section footer end-->
 
-  <div class="links">
-    <h4>Menu</h4>
-    <a href="#home">Home</a>
-    <a href="#about">About us</a>
-    <a href="#menu">Menu</a>
-    <a href="#contack">Contack</a>
-  </div>
+  <script>
+    feather.replace();
+  </script>
 
-<div class="addres">
-  <h4>Addres</h4>
-  <a href="https://maps.app.goo.gl/p8TcjJ1Y14rL8GcFA">
-    <p>Jl. MT Haryono, Luwuk, Kabupaten Banggai, Sulawesi Tengah</p>
-  </a>
-</div>
+  <!--js-->
+  <script src="script.js"></script>
+</body>
 
-  
-</footer>
-<div class="hak">
-  <h4>created by virus. | <span>&#169; 2023 </span></h4>
-  <a href="https://www.instagram.com/jnpblokg_/">
-    <img src="/img/ig.png" alt="ig">
-  </a>
-  <a href="https://www.linkedin.com/in/juan-kuganda-b56714299/">
-    <img class="li" src="/img/likedln.png" alt="ig">
-  </a>
-</div>
-    <!--section footer end-->
-
-    <script>
-      feather.replace();
-    </script>
-
-    <!--js-->
-    <script src="script.js"></script>
-  </body>
 </html>
