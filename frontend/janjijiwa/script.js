@@ -25,14 +25,37 @@ document.addEventListener("click", function (e) {
   }
 });
 // shop
-const shop = document.querySelector(".shopcart")
+const shop = document.querySelector(".shopcart");
 document.querySelector("#shopping-cart").onclick = (e) => {
   shop.classList.toggle("active");
   e.preventDefault();
 };
-const cart = document.querySelector("#shopping-cart")
+const cart = document.querySelector("#shopping-cart");
 document.addEventListener("click", function (e) {
   if (!cart.contains(e.target) && !shop.contains(e.target)) {
     shop.classList.remove("active");
   }
 });
+
+const modal = document.querySelector("#itemdetailmodal");
+const btnt = document.querySelectorAll(".mata");
+const close = document.querySelector('.closebtn');
+
+btnt.forEach((a)=> {
+  
+  a.onclick = (e) => {
+      modal.style.display = "flex";
+      e.preventDefault(); 
+  };
+
+
+})
+close.onclick = (e) => {
+  modal.style.display = "none";
+  e.preventDefault();
+};
+window.onclick = (e) => {
+  if (e.target === modal){
+    modal.style.display = 'none';
+  }
+}
